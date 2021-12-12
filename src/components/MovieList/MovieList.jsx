@@ -6,9 +6,11 @@ function MovieList() {
 
     const dispatch = useDispatch();
     const movies = useSelector(store => store.movies);
+    const genres = useSelector(store => store.genres);
 
     useEffect(() => {
         dispatch({ type: 'FETCH_MOVIES' });
+        dispatch({ type: 'FETCH_GENRES' });
     }, []);
 
     return (
